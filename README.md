@@ -12,4 +12,5 @@ Model of the project:
 * Question is the text, which has a set of right answers.
 * Answer is a text
 * The user client
-* The user Admin 
+* The user Admin
+* base with test results
