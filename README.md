@@ -1,24 +1,16 @@
-# README
+Ruby version used: 2.7.2
+Tasks TestGuru
+* Creating and managing tests
+* Authentication
+* Basic access control
+* Running tests
+* Publishing results
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Model of the project:
+* Category is a set of tests.
+* Test - contains the questions and right answers.
+* Question is the text, which has a set of right answers.
+* Answer is a text
+* The user client
+* The user Admin
+* base with test results
