@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-categories = Category.create!([
+unless Test.exists?
+  categories = Category.create!([
     {title: "Category1"},
     {title: "Category2"}
   ])
@@ -41,3 +42,4 @@ categories = Category.create!([
     {user_id: users[0].id, test_id: tests[1].id},
     {user_id: users[0].id, test_id: tests[2].id}
   ])
+end
