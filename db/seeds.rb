@@ -17,29 +17,29 @@ unless Test.exists?
   ])
 
   tests = Test.create!([
-    {title: "Test1", category_id: categories[0].id, author_id: users[0].id},
-    {title: "Test2", category_id: categories[1].id, author_id: users[1].id},
-    {title: "Test3", category_id: categories[0].id, author_id: users[1].id}
+    {name: "Test1", category: categories[0], author: users[0], level: 0},
+    {name: "Test2", category: categories[1], author: users[1], level: 1},
+    {name: "Test3", category: categories[0], author: users[1], level: 1}
   ])
 
   questions = Question.create!([
-    {title: "Question1_1", test_id: tests[0].id},
-    {title: "Question2_1", test_id: tests[1].id},
-    {title: "Question3_1", test_id: tests[2].id}
+    {title: "Question1_1", test: tests[0]},
+    {title: "Question2_1", test_id: tests[1]},
+    {title: "Question3_1", test_id: tests[2]}
   ])
 
   Answer.create!([
-    {title: "Answer1_t", question_id: questions[0].id,correst: true},
-    {title: "Answer1_f", question_id: questions[0].id,correst: false},
-    {title: "Answer2_t", question_id: questions[1].id,correst: true},
-    {title: "Answer2_f", question_id: questions[1].id,correst: false},
-    {title: "Answer3_t", question_id: questions[2].id,correst: true},
-    {title: "Answer3_f", question_id: questions[2].id,correst: false}
+    {title: "Answer1_t", question_id: questions[0],correst: true},
+    {title: "Answer1_f", question_id: questions[0],correst: false},
+    {title: "Answer2_t", question_id: questions[1],correst: true},
+    {title: "Answer2_f", question_id: questions[1],correst: false},
+    {title: "Answer3_t", question_id: questions[2],correst: true},
+    {title: "Answer3_f", question_id: questions[2],correst: false}
   ])
 
-  BaseUserTest.create!([
-    {user_id: users[0].id, test_id: tests[0].id},
-    {user_id: users[0].id, test_id: tests[1].id},
-    {user_id: users[0].id, test_id: tests[2].id}
+  UserTest.create!([
+    {user: users[0], test: tests[0]},
+    {user: users[0], test: tests[1]},
+    {user: users[0], test: tests[2]}
   ])
 end
