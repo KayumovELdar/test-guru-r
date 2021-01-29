@@ -14,9 +14,7 @@ class QuestionsController < ApplicationController
      render html: "Question: #{question.text}<br>id: #{question.id} <br>".html_safe
   end
 
-  def new
-
-  end
+  def new;end
 
   def create
     @question = @test.questions.new(question_params)
