@@ -19,23 +19,29 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question(params.require(:question).permit(:text))
+    @question = @test.questions.new(question_params)
 
     render plain:test.inspect
   end
+
   def destroy
     @questio.destroy
     render html: "Вопрос удалён!"
   end
+
+  def question_params
+    params.require(:question).permit(:text)
+  end
+
   def find_question
    @question = Question.find(params[:id])
- end
+  end
 
- def find_test
-   @test = Test.find(params[:id])
- end
+  def find_test
+    @test = Test.find(params[:id])
+  end
 
- def resque_with_test_not_found
+  def resque_with_test_not_found
     render html: 'Пусто'
   end
 end
