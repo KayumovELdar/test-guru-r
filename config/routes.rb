@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'article/index'
   root to: 'tests#index'
 
   resources :tests do
