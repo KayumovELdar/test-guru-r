@@ -8,18 +8,17 @@ class QuestionsController < ApplicationController
       render html: @test.questions
   end
 
-  def show
-    question = @question
-
-     render html: "Question: #{question.text}<br>id: #{question.id} <br>".html_safe
-  end
+  def show;end
 
   def new;end
 
   def create
     @question = @test.questions.new(question_params)
-
-    render plain:test.inspect
+      if @question.save
+        redirect_to test_questions_path(@test)
+      else
+        render :new
+      end
   end
 
   def destroy
