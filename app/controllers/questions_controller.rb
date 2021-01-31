@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @questio.destroy
+    @questioт.destroy
     render html: "Вопрос удалён!"
   end
 
