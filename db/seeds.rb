@@ -24,17 +24,17 @@ unless Test.exists?
 
   questions = Question.create!([
     {title: "Question1_1", test: tests[0]},
-    {title: "Question2_1", test_id: tests[1]},
-    {title: "Question3_1", test_id: tests[2]}
+    {title: "Question2_1", test: tests[1]},
+    {title: "Question3_1", test: tests[2]}
   ])
 
   Answer.create!([
-    {title: "Answer1_t", question_id: questions[0],correst: true},
-    {title: "Answer1_f", question_id: questions[0],correst: false},
-    {title: "Answer2_t", question_id: questions[1],correst: true},
-    {title: "Answer2_f", question_id: questions[1],correst: false},
-    {title: "Answer3_t", question_id: questions[2],correst: true},
-    {title: "Answer3_f", question_id: questions[2],correst: false}
+    {title: "Answer1_t", question: questions[0],correst: true},
+    {title: "Answer1_f", question: questions[0],correst: false},
+    {title: "Answer2_t", question: questions[1],correst: true},
+    {title: "Answer2_f", question: questions[1],correst: false},
+    {title: "Answer3_t", question: questions[2],correst: true},
+    {title: "Answer3_f", question: questions[2],correst: false}
   ])
 
   UserTest.create!([
