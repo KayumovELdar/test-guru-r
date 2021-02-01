@@ -26,6 +26,8 @@ class QuestionsController < ApplicationController
     render html: "Вопрос удалён!"
   end
 
+  private
+
   def question_params
     params.require(:question).permit(:text)
   end
