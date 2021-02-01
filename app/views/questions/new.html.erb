@@ -1,0 +1,15 @@
+<h1>Create a question</h1>
+
+<%= form_with model: [ @test, @question], local: true do |form| %>
+  <div>
+    <%= form.label :text %><br>
+    <%= form.text_field :text %>
+    <%= @question.errors.full_messages_for(:text).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
