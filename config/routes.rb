@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  root "test#index"
 
-  get 'tests/index'
   resources :tests do
     resources :questions, shallow: true
   end
