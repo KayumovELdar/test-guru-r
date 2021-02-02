@@ -1,0 +1,15 @@
+<%= form_with model: @test, local: true do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :level %><br>
+    <%= form.namber_field :level %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

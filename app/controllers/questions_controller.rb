@@ -10,14 +10,28 @@ class QuestionsController < ApplicationController
 
   def show;end
 
-  def new;end
+  def new
+    @question = @test.questions.new
+  end
 
   def create
     @question = @test.questions.new(question_params)
       if @question.save
-        redirect_to test_questions_path(@test)
+        redirect_to @question
       else
         render :new
+      end
+  end
+
+  def edit
+  end
+
+  def updale
+    @question = @test.questions.update(question_params)
+      if @question.save
+        redirect_to @question
+      else
+        render :edit
       end
   end
 
