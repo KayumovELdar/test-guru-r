@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 unless Test.exists?
   categories = Category.create!([
-    {title: "Category1"},
-    {title: "Category2"}
+    {name: "Category1"},
+    {name: "Category2"}
   ])
 
   users = User.create!([
@@ -23,18 +23,18 @@ unless Test.exists?
   ])
 
   questions = Question.create!([
-    {title: "Question1_1", test: tests[0]},
-    {title: "Question2_1", test: tests[1]},
-    {title: "Question3_1", test: tests[2]}
+    {text: "Question1_1", test: tests[0]},
+    {text: "Question2_1", test: tests[1]},
+    {text: "Question3_1", test: tests[2]}
   ])
 
   Answer.create!([
-    {title: "Answer1_t", question: questions[0],correst: true},
-    {title: "Answer1_f", question: questions[0],correst: false},
-    {title: "Answer2_t", question: questions[1],correst: true},
-    {title: "Answer2_f", question: questions[1],correst: false},
-    {title: "Answer3_t", question: questions[2],correst: true},
-    {title: "Answer3_f", question: questions[2],correst: false}
+    {text: "Answer1_t", question: questions[0],correst: true},
+    {text: "Answer1_f", question: questions[0],correst: false},
+    {text: "Answer2_t", question: questions[1],correst: true},
+    {text: "Answer2_f", question: questions[1],correst: false},
+    {text: "Answer3_t", question: questions[2],correst: true},
+    {text: "Answer3_f", question: questions[2],correst: false}
   ])
 
   UserTest.create!([
