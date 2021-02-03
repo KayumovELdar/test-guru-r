@@ -27,6 +27,7 @@ class QuestionsController < ApplicationController
   end
 
   def updale
+    @question =Test.find(params[:id])
       if @question.update(question_params)
         redirect_to @question
       else
