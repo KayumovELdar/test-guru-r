@@ -27,8 +27,8 @@ class QuestionsController < ApplicationController
   end
 
   def updale
-    @question = @test.questions.update(question_params)
-      if @question.save
+    @question = @test.questions.find(question_params)
+      if @question.update
         redirect_to @question
       else
         render :edit
