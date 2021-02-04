@@ -1,4 +1,7 @@
 class TestsController < ApplicationController
+
+  before_action :find_test, only: %i[show edit update destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
   def index
     @tests = Test.all
   end
@@ -13,7 +16,6 @@ class TestsController < ApplicationController
 
   def create
     @test = Test.new(test_params)
-
     if @test.save
       redirect_to @test
     else
@@ -22,12 +24,9 @@ class TestsController < ApplicationController
   end
 
   def edit
-    @test =Test.find(params[:id])
   end
 
   def update
-    @test =Test.find(params[:id])
-
     if @test.update(test_params)
       redirect_to @test
     else
@@ -36,7 +35,6 @@ class TestsController < ApplicationController
   end
 
   def destroy
-    @test=Test.find(params[:id])
     @test.destroy
     redirect_to root_path
   end
@@ -49,5 +47,9 @@ class TestsController < ApplicationController
 
     def test_params
       params.require(:test).permit(:level, :name)
+    end
+
+    def rescue_with_test_not_found
+    render plain: 'Test was not found!'
     end
 end

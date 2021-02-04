@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index create new destroy]
-  before_action :find_question, only: %i[show destroy]
+  before_action :find_question, only: %i[show destroy edit]
 
   rescue_from ActiveRecord::RecordNotFound, with: :resque_with_test_not_found
 
@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
   def show;end
 
   def new
-    @question = @test.questions.new
+    @question = Questions.new
   end
 
   def create
@@ -27,7 +27,6 @@ class QuestionsController < ApplicationController
   end
 
   def updale
-    @question = Questions.find(params[:id])
       if @question.update(question_params)
         redirect_to @question
       else
@@ -51,7 +50,7 @@ class QuestionsController < ApplicationController
   end
 
   def find_test
-    @test = Test.find(params[:id])
+    @test = Test.find(params[:test_id])
   end
 
   def resque_with_test_not_found

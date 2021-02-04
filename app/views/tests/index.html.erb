@@ -5,11 +5,10 @@
     <th>Name</th>
     <th>Level</th>
   </tr>
-  <% @tests.each do |test| %>
-    <tr>
-      <th><%= link_to test.name, test %></th>
-      <th><%=test.level%></th>
-    </tr>
-  <% end%>
+
+  <%= render @tests %>
+
 </table>
+<p>
 <%= link_to "New Test", new_test_path %>
+</p><br>

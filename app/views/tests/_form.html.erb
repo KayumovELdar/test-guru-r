@@ -2,12 +2,17 @@
   <%= render 'shared/errors',resource: @test %>
   <div>
     <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, id: :test_name %>
   </div>
 
   <div>
     <%= form.label :level %><br>
-    <%= form.namber_field :level %>
+    <%= form.namber_field :level, id: :test_level %>
+  </div>
+
+  <div>
+    <%= form.label :category_id %><br>
+    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </div>
 
   <div>
