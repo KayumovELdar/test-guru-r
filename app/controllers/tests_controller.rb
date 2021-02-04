@@ -7,7 +7,6 @@ class TestsController < ApplicationController
   end
 
   def show
-    @test = Test.find(params[:id])
   end
 
   def new
@@ -46,7 +45,7 @@ class TestsController < ApplicationController
     end
 
     def test_params
-      params.require(:test).permit(:level, :name)
+      params.require(:test).permit(:level, :name, :category)
     end
 
     def rescue_with_test_not_found
