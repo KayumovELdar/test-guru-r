@@ -1,5 +1,6 @@
-class Test < ApplicationRecord
+# frozen_string_literal: true
 
+class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'User'
 

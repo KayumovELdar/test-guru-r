@@ -1,7 +1,8 @@
-  require_ralative 'Questions_controller'
+# frozen_string_literal: true
+
+require_ralative 'Questions_controller'
 
 class TestsController < ApplicationController
-
   require_ralative 'Questions_controller'
   before_action :find_test, only: %i[show edit update destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
@@ -9,8 +10,7 @@ class TestsController < ApplicationController
     @tests = Test.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @test = Test.new
@@ -25,8 +25,7 @@ class TestsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @test.update(test_params)
@@ -43,16 +42,15 @@ class TestsController < ApplicationController
 
   private
 
+  def test_params
+    params.require(:test).permit(:level, :name, :category)
+  end
 
-    def test_params
-      params.require(:test).permit(:level, :name, :category)
-    end
+  def find_test
+    @test = Test.find(params[:id])
+  end
 
-    def find_test
-      @test = Test.find(params[:id])
-    end
-
-    def rescue_with_test_not_found
-      render plain: 'Test was not found!'
-    end
+  def rescue_with_test_not_found
+    render plain: 'Test was not found!'
+  end
 end
