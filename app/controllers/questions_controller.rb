@@ -49,10 +49,6 @@ class QuestionsController < ApplicationController
    @question = Question.find(params[:id])
   end
 
-  def find_test
-    @test = Test.find(params[:test_id])
-  end
-
   def resque_with_test_not_found
     render html: 'Пусто'
   end
