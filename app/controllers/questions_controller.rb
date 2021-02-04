@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
   def show;end
 
   def new
-    @question = Questions.new
+    @question = @test.questions.new
   end
 
   def create
@@ -45,8 +45,12 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:text)
   end
 
+  def find_test
+    @test = Test.find(params[:id])
+  end
+
   def find_question
-   @question = Question.find(params[:id])
+   @question = @test.questions.find(params[:id])
   end
 
   def resque_with_test_not_found

@@ -48,7 +48,11 @@ class TestsController < ApplicationController
       params.require(:test).permit(:level, :name, :category)
     end
 
+    def find_test
+      @test = Test.find(params[:id])
+    end
+
     def rescue_with_test_not_found
-    render plain: 'Test was not found!'
+      render plain: 'Test was not found!'
     end
 end
