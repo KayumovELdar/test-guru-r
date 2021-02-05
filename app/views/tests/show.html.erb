@@ -8,6 +8,15 @@
   <%= @test.level %>
 </p>
 
+<p>
+  <%= link_to 'Создать вопрос', new_test_question_path(@test) %>
+</p>
+
+<strong>Вопросы теста:</strong>
+<table>
+  <%= render @questions %>
+</table>
+
 <br>
 <%= link_to 'Редактировать тест', edit_test_path(@test) %> |
 <%= link_to 'Назад', tests_path %>
