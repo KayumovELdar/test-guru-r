@@ -1,6 +1,4 @@
-# frozen_string_literal: true
 
-require_ralative 'Questions_controller'
 
 class TestsController < ApplicationController
   require_ralative 'Questions_controller'

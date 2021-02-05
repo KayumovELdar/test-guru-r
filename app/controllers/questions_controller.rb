@@ -6,10 +6,6 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :resque_with_test_not_found
 
-  def index
-    render html: @test.questions
-  end
-
   def show; end
 
   def new
