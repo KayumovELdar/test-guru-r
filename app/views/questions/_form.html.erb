@@ -1,6 +1,6 @@
 <h2><%= question_header(@question) %></h2>
 <%= render 'shared/errors',resource: @question  %>
-<%= form_with model: [ @test, @question], local: true do |form| %>
+<%= form_with model: @question, local: true do |form| %>
   <div>
     <%= form.label :text %><br>
     <%= form.text_field :text id: :question_text %>
