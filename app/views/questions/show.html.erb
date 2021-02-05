@@ -1,0 +1,6 @@
+<p>
+  <strong>Вопрос</strong>
+  <%= @question.text %>
+</p>
+<%= link_to 'Редактировать вопрос', edit_question_path(@question) %> |
+<%= link_to 'Назад', test_path(@question.test) %>
