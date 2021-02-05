@@ -9,6 +9,6 @@ class Answer < ApplicationRecord
   private
 
   def validate_num_of_answers
-    errors.add(:question) if question.answers.count >= 4
+    errors.add(:question, 'Число ответов привысило лимит: 4') if question.answers.count >= 4
   end
 end

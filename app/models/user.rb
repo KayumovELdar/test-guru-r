@@ -1,11 +1,11 @@
 class User < ApplicationRecord
-  has_many :tests, foreign_key: :author_id, dependent: :destroy
-  has_many :test_taking_sessions, dependent: :destroy
-  has_many :taken_tests, through: :test_taking_sessions, source: :test
+  has_many :authored_tests, class_name: 'Test', foreign_key: :author_id, dependent: :nullify
+  has_many :user_tests, dependent: :destroy
+  has_many :tests, through: :user_tests
 
   validates :name, presence: true
 
-  def participated_tests(level)
-    taken_tests.of_level(level)
+  def test_by_level(level)
+    tests.where(level: level)
   end
 end
