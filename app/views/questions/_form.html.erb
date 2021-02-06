@@ -1,0 +1,10 @@
+<h3><%= question_header(@question) %></h3>
+<%= form_with model: route, local: true do |form| %>
+
+<p>
+  <%= form.label :text %>
+  <%= form.text_field :text %>
+  </p>
+  <p><%= form.submit %></p>
+<% end %>
+<%= render 'shared/errors', resource: @question %>
