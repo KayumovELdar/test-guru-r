@@ -1,7 +1,4 @@
 # README
-
-
-
 Ruby version used: 2.7.2 Tasks TestGuru
 
     Creating and managing tests
