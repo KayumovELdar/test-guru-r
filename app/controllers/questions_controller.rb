@@ -46,11 +46,10 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:body)
+    params.require(:question).permit(:text)
   end
 
   def rescue_with_question_not_found
     render plain: 'Вопрос не найден!'
   end
-end
 end

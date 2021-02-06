@@ -29,13 +29,13 @@ unless Test.exists?
                                ])
 
   answers = Answer.create!([
-                               {text: 'Он сам появился, на все воля божья!!!!', correct: true, question: questions[0]},
-                               {text: 'Юкихито Мацумото', correct: false, question: questions[0]},
+                               {text: 'Он сам появился, на все воля божья!!!!', correct: false question: questions[0]},
+                               {text: 'Юкихито Мацумото', correct: true question: questions[0]},
                                {text: 'Николя Фламель', correct: false, question: questions[0]},
                                {text: 'Яндекс', correct: false, question: questions[1]},
                                {text: 'Google', correct: true, question: questions[1]},
-                               {text: 'ДА!', correct: false, question: questions[2]},
-                               {text: 'НЕТ!', correct: true, question: questions[2]},
+                               {text: 'ДА!', correct: true, question: questions[2]},
+                               {text: 'НЕТ!', correct: false, question: questions[2]},
                            ])
 
   passed_tests = User_test.create!([
