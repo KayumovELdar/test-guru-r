@@ -1,21 +1,25 @@
 <%= form_with model: @test, local: true do |form| %>
-  <%= render 'shared/errors',resource: @test %>
-  <div>
-    <%= form.label :name %><br>
-    <%= form.text_field :name, id: :test_name %>
-  </div>
+  <%= render 'shared/errors', resource: @test %>
+  <%= form.hidden_field :author_id, :value => 1 %>
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
 
-  <div>
-    <%= form.label :level %><br>
-    <%= form.namber_field :level, id: :test_level %>
-  </div>
+  <p>
+    <%= form.label :level %>
+    <%= form.text_field :level  %>
+  </p>
 
-  <div>
-    <%= form.label :category_id %><br>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
-  </div>
+  <p>
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, prompt: true %>
+  </p>
 
-  <div>
-    <%= form.submit %>
-  </div>
+  <p>
+    <%= form.label :author_id %>
+    <%= form.collection_select :author_id, User.all, :id, :name, prompt: true %>
+  </p>
+
+  <p><%= form.submit %></p>
 <% end %>

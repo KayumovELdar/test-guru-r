@@ -1,11 +1,9 @@
-# frozen_string_literal: true
-
 module ApplicationHelper
   def current_year
-    Time.current.year
+    Date.current.year
   end
 
   def github_url(author, repo)
-    link_to 'github', "https://github.com/#{author}/#{repo}/", rel: :nofollow, target: :_blank
+    link_to 'Проект', "https://github.com/#{author}/#{repo}", target: '_blank'
   end
 end

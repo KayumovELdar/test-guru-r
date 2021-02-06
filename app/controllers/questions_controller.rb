@@ -1,19 +1,18 @@
-# frozen_string_literal: true
-
 class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index create new]
   before_action :find_question, only: %i[show destroy edit update]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :resque_with_test_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def show; end
 
   def new
-    @question = @test.questions.new
+    @question = Question.new
   end
 
   def create
     @question = @test.questions.new(question_params)
+
     if @question.save
       redirect_to @question
     else
@@ -23,7 +22,7 @@ class QuestionsController < ApplicationController
 
   def edit; end
 
-  def updale
+  def update
     if @question.update(question_params)
       redirect_to @question
     else
@@ -32,25 +31,25 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @questioт.destroy
-    render html: 'Вопрос удалён!'
+    @question.destroy
+    redirect_to @question.test
   end
 
   private
+
+  def find_test
+    @test = Test.find(params[:test_id])
+  end
+
+  def find_question
+    @question = Question.find(params[:id])
+  end
 
   def question_params
     params.require(:question).permit(:text)
   end
 
-  def find_test
-    @test = Test.find(params[:id])
-  end
-
-  def find_question
-    @question = @test.questions.find(params[:id])
-  end
-
-  def resque_with_test_not_found
-    render html: 'Пусто'
+  def rescue_with_question_not_found
+    render plain: 'Вопрос не найден!'
   end
 end

@@ -1,17 +1,14 @@
-# frozen_string_literal: true
-
 class Answer < ApplicationRecord
   belongs_to :question
 
   validates :text, presence: true
-  validate :validate_length, on: :create
+  validate :validate_num_of_answers, on: :create
 
   scope :correct, -> { where(correct: true) }
 
-  def validate_length
-    if question.answers.count >= 4
-      # число ответов не может быть больше 4
-      errors.add(:question)
-    end
+  private
+
+  def validate_num_of_answers
+    errors.add(:question, 'Число ответов привысило лимит: 4') if question.answers.count >= 4
   end
 end
