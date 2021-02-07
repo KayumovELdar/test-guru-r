@@ -52,4 +52,5 @@ class QuestionsController < ApplicationController
   def rescue_with_question_not_found
     render plain: 'Вопрос не найден!'
   end
+
 end

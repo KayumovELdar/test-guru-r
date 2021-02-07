@@ -53,4 +53,5 @@ class TestsController < ApplicationController
   def rescue_with_test_not_found
     render plain: 'Тест не найден'
   end
+
 end
