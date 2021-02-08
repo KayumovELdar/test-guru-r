@@ -17,6 +17,6 @@ class Test < ApplicationRecord
   scope :of_category, ->(category) { joins(:category).where(categories: { name: category }).order(name: :desc) }
 
   def self.from_category(category)
-    Test.of_category(category).pluck(:name)
+    of_category(category).pluck(:name)
   end
 end

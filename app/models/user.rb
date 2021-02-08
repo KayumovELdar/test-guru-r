@@ -5,9 +5,11 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
-  def passing_test_levet(level_test)
-    Test.joins(:user_tests)
-        .where(level: level_test)
-        .where(user_tests: { user_id: id })
+  def test_by_level(level)
+    tests.where(level: level)
+  end
+
+  def test_passage(test)
+    test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 end

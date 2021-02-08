@@ -9,7 +9,7 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids])
 
-    if @test_passage.completed?
+    if @test_passage.complited?
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
