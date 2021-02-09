@@ -1,29 +1,25 @@
 class AnswersController < ApplicationController
-
   before_action :set_question, only: %i[new create]
-  before_action :set_answer, only: %i[ show edit update destroy ]
+  before_action :set_answer, only: %i[show edit update destroy]
 
-  def show
-  end
+  def show; end
 
   # GET /answers/new
   def new
     @answer = @question.answers.new
   end
 
-  def edit
-  end
-
+  def edit; end
 
   def create
     @answer = @question.answers.new(answer_params)
 
-     if @answer.save
-       redirect_to @answer
-     else
-       render :new
-     end
-   end
+    if @answer.save
+      redirect_to @answer
+    else
+      render :new
+    end
+  end
 
   # PATCH/PUT /answers/1 or /answers/1.json
   def update
@@ -42,15 +38,15 @@ class AnswersController < ApplicationController
   private
 
   def set_question
-  @question = Question.find(params[:question_id])
-end
+    @question = Question.find(params[:question_id])
+  end
 
-    def set_answer
-      @answer = Answer.find(params[:id])
-    end
+  def set_answer
+    @answer = Answer.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def answer_params
-      params.require(:answer).permit(:text, :correct)
-    end
+  # Only allow a list of trusted parameters through.
+  def answer_params
+    params.require(:answer).permit(:text, :correct)
+  end
 end

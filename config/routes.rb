@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   resources :answers
   root 'tests#index'
 
@@ -13,5 +12,4 @@ Rails.application.routes.draw do
   resources :test_passages, only: %i[show update] do
     get :result, on: :member
   end
-
 end
