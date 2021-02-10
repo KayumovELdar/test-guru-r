@@ -5,7 +5,5 @@ module QuestionsHelper
     else
       'Создать новый вопрос'
     end
-
   end
-  
 end
