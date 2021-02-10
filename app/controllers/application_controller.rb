@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
       cookies[:path] = request.fullpath
       redirect_to login_path, alert: 'Авторизуйтесь для доступа к TestGuru'
     end
+
+    cookies[:mail] = current_user&.email
   end
 
   def current_user
