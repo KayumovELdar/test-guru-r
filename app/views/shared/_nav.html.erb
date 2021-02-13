@@ -1,7 +1,7 @@
 <p class="nav user"><%= link_to 'Тест Гуру', root_path %></p>
 <% if user_signed_in? %>
   <p class="nav user">
-    Добро пожаловать, <b><%= current_user.name %></b> Гуру<br>
+    Добро пожаловать, <b><%= current_user.first_name %></b> Гуру<br>
     <%= link_to 'Выход', destroy_user_session_path, method: :delete %>
   </p>
 <% else %>

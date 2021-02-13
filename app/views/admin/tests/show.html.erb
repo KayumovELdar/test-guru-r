@@ -1,0 +1,21 @@
+<p>
+  <strong>Тест</strong>
+  <%= @test.name %>
+</p>
+
+<p>
+  <strong>Уровень:</strong>
+  <%= @test.level %>
+</p>
+
+<p>
+  <%= link_to 'Создать вопрос', new_admin_test_question_path(@test) %>
+</p>
+
+<strong>Вопросы теста:</strong>
+<table>
+  <%= render @test.questions %>
+</table>
+<br>
+<%= link_to 'Редактировать тест', edit_admin_test_path(@test) %> |
+<%= link_to 'Назад', admin_tests_path %>
