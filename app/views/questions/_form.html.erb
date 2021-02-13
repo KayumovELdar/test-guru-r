@@ -1,8 +1,8 @@
 <h3><%= question_header(@question) %></h3>
-<%= form_with model: [:admin, route], local: true do |form| %>
+<%= form_with model: route, local: true do |form| %>
 <p>
   <%= form.label :text %>
-  <%= form.text_field :text, value: @question.text %>
+  <%= form.text_field :text %>
   </p>
   <p><%= form.submit %></p>
 <% end %>

@@ -14,6 +14,11 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
 
+  validates :name, :email, presence: true
+  validates :email, uniqueness: true,
+                    format: { with: URI::MailTo::EMAIL_REGEXP,
+                              message: 'Формат почты: name@post.com' }
+
   def test_by_level(level)
     tests.where(level: level)
   end
