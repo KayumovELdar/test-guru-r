@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   devise :database_authenticatable,
          :registerable,
          :recoverable,
@@ -12,7 +11,7 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :gists, dependent: :destroy
-  
+
   def test_by_level(level)
     tests.where(level: level)
   end
