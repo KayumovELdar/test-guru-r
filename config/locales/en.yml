@@ -31,3 +31,31 @@
 
 en:
   hello: "Hello world"
+
+  admin:
+    gists:
+      index:
+        header: "Created gists"
+        question: "Question"
+        url: "Gist url"
+        email: "User email"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  test_passages:
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist"
+      view_gist: "View Gist on GitHub"
+
+  layouts:
+    admin:
+      panel: "Admin Panel"
+
+  services:
+    gist_question_service:
+      desc: "A question from test %{test_name} (TestGuru)"
