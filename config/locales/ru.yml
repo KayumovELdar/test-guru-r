@@ -1,0 +1,30 @@
+ru:
+  admin:
+    gists:
+      index:
+        header: "Гисты"
+        question: "Вопрос"
+        url: "Url гиста"
+        email: "Почта"
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+
+  test_passages:
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"
+      view_gist: "Посмотреть Gist на GitHub"
+
+  layouts:
+    admin:
+      panel: "Панель администратора"
+
+  services:
+    gist_question_service:
+      desc: "Вопрос из теста %{test_name} (TestGuru)"
