@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 unless Test.exists?
   users = User.create!([
-                         { name: 'Eldar' },
-                         { name: 'User_1' }
+    {first_name: 'Eldar',last_name: 'Ka', email: 'eldar@email.ru', password: 'qwe123'},
+    {first_name: 'User1',last_name: 'Ka', email: 'user1@email.ru', password: 'qwe123'}
                        ])
 
   categories = Category.create!([
