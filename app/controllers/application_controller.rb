@@ -6,7 +6,12 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource)
-    resource.is_a?(Admin) ? admin_tests_path : root_path
+    stored_location_for(resource) ||
+      if resource.is_a?(Admin)
+        admin_tests_path
+      else
+        super
+      end
   end
 
   def configure_permitted_parameters
