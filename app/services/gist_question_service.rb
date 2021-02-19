@@ -34,6 +34,5 @@ class GistQuestionService
     content = [@question.text]
     content += @question.answers.pluck(:text)
     content.join("/n")
-    #[@question.text+@question.answers.pluck(:text)].join(/n)
   end
 end
