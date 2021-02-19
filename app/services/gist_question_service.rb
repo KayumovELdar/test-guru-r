@@ -13,6 +13,10 @@ class GistQuestionService
     @client.html_url
   end
 
+  def gist_id
+    @client.html_id
+  end
+
   def success?
     @client.last_response.html_url.present?
   end
