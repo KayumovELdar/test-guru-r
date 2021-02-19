@@ -5,11 +5,11 @@ class GistsController < ApplicationController
 
     if result.last_response.html_url.present?
       Gist.create!(question: @test_passage.current_question,
-                    user: current_user,
-                    url: result.html_url)
-      flash[:notice] = t( '.success', url: result[:html_url] )
+                   user: current_user,
+                   url: result.html_url)
+      flash[:notice] = t('.success', url: result[:html_url])
     else
-        flash[:alert] = t('.failure')
+      flash[:alert] = t('.failure')
     end
     redirect_to @test_passage
   end
