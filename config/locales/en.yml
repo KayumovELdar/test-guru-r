@@ -46,7 +46,7 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
 
-  gist:
+  gists:
     cteate:
       success: <a href="%{url}" target="_blank" rel="nofollow">Gist was successfully created!</a>
       failure: "An error occurred while saving gist"

@@ -15,9 +15,9 @@ ru:
         other: "Обнаружено %{count} ошибки"
 
 
-  gist:
+  gists:
     create:
-      success: <a href="%{url}" target="_blank" rel="nofollow">Gist успешно сохранен!</a>
+      success: "Gist успешно сохранен!"
       failure: "Во время сохранения gist произошла ошибка"
 
   layouts:
