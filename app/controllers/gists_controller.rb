@@ -8,7 +8,7 @@ class GistsController < ApplicationController
                    user: current_user,
                    url: result.html_url)
 
-      flash[:notice] = "#{t('.success')} #{view_context.link_to(result.html_url, target: "_blank")}"
+      flash[:notice] = t('.success',url: result.html_url, gist_id: result.id)
     else
       flash[:alert] = t('.failure')
     end
