@@ -46,11 +46,10 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
 
-  test_passages:
-    gist:
-      success: "Gist was successfully created!"
+  gist:
+    cteate:
+      success: <a href="%{url}" target="_blank" rel="nofollow">Gist was successfully created!</a>
       failure: "An error occurred while saving gist"
-      view_gist: "View Gist on GitHub"
 
   layouts:
     admin:

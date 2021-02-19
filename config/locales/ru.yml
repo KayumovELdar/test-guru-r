@@ -15,11 +15,10 @@ ru:
         other: "Обнаружено %{count} ошибки"
 
 
-  test_passages:
-    gist:
-      success: "Gist успешно сохранен!"
+  gist:
+    create:
+      success: <a href="%{url}" target="_blank" rel="nofollow">Gist успешно сохранен!</a>
       failure: "Во время сохранения gist произошла ошибка"
-      view_gist: "Посмотреть Gist на GitHub"
 
   layouts:
     admin:

@@ -9,6 +9,14 @@ class GistQuestionService
     @client.create_gist(gist_params)
   end
 
+  def gist_url
+    @client.html_url
+  end
+
+  def success?
+    @client.last_response.html_url.present?
+  end
+
   private
 
   def gist_params
@@ -25,6 +33,7 @@ class GistQuestionService
   def gist_content
     content = [@question.text]
     content += @question.answers.pluck(:text)
-    content.join
+    content.join("/n")
+    #[@question.text+@question.answers.pluck(:text)].join(/n)
   end
 end
