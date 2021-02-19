@@ -17,7 +17,7 @@ ru:
 
   gists:
     create:
-      success: "<a href='%{url}' target='_blank'>'%{gist_id}'</a>Gist был успешно сохранён."
+      success: <a href='%{url}' target='_blank'>'%{gist_id}'</a>Gist был успешно сохранён.
       failure: "Во время сохранения gist произошла ошибка"
 
   layouts:
