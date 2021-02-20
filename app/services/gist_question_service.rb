@@ -9,18 +9,6 @@ class GistQuestionService
     @client.create_gist(gist_params)
   end
 
-  def gist_url
-    @client.html_url
-  end
-
-  def gist_id
-    @client.html_id
-  end
-
-  def success?
-    @client.html_url.present?
-  end
-
   private
 
   def gist_params
