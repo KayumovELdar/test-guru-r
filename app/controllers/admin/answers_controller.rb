@@ -1,11 +1,9 @@
 class Admin::AnswersController < Admin::BaseController
-
   before_action :set_question, only: %i[new create]
   before_action :set_answer, only: %i[show edit update destroy]
 
   def show; end
 
-  # GET /answers/new
   def new
     @answer = @question.answers.new
   end
@@ -22,7 +20,6 @@ class Admin::AnswersController < Admin::BaseController
     end
   end
 
-  # PATCH/PUT /answers/1 or /answers/1.json
   def update
     if @answer.update(answer_params)
       redirect_to [:admin, @answer]
@@ -46,7 +43,6 @@ class Admin::AnswersController < Admin::BaseController
     @answer = Answer.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def answer_params
     params.require(:answer).permit(:text, :correct)
   end

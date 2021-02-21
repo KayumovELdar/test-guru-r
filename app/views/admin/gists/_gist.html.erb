@@ -1,0 +1,5 @@
+<tr>
+  <td><%= gist.user.email %></td>
+  <td><%= link_to("#{truncate(gist.question.title, length:25)}", question_path(gist.question)) %></td>
+  <td><%= link_to("#{truncate(gist.url)}", gist.url, target: :_blank, rel: :nofollow) %></td>
+</tr>

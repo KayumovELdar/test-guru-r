@@ -4,5 +4,5 @@
   <%= @question.text %>
 </p>
 
-<%= render 'form', answer: [@question, @answer] %>
+<%= render 'form' %>
 <%= link_to 'Назад', admin_question_path(@question) %>
