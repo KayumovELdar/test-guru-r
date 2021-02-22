@@ -12,6 +12,7 @@ module TestGuru
     config.load_defaults 6.1
     config.i18n.default_locale = :ru
     config.i18n.available_locales = %i[ru en]
+    config.use_webpack = true
 
     # Configuration for the application, engines, and railties goes here.
     #
