@@ -1,34 +1,27 @@
-document.addEventListener('turbolinks:load', function () {
-    var control = document.querySelector('.check-pass');
+document.addEventListener('turbolinks:load', function() {
+  const passwordField = document.getElementById('user_password')
+  const confirmationField = document.getElementById('user_password_confirmation')
 
-    if (control) { control.addEventListener('input', passwordCheck) }
-});
+  if (passwordField && confirmationField) {
+    passwordField.addEventListener('input', passwordCheck)
+    confirmationField.addEventListener('input', passwordCheck)
+  }
+})
 
 function passwordCheck() {
-    var password = document.getElementById('user_password');
-    var confirmation = document.getElementById('user_password_confirmation');
-    var match = document.querySelector('.octicon-check').classList;
-    var notMatch = document.querySelector('.octicon-x').classList;
+  const match = document.querySelector('.octicon-check').classList;
+  const notMatch = document.querySelector('.octicon-x').classList;
+  const password = document.getElementById('user_password').value
+  const confirmation = document.getElementById('user_password_confirmation').value
 
-    if(this.value == ""){
-      errorMark.classList.add('hide')
-      successMark.classList.add('hide')
-      return
-    }
-    
-    if (password.value === confirmation.value) {
-        match.remove('hide');
-        notMatch.add('hide');
-        password.classList.add('border-green');
-        confirmation.classList.add('border-green');
-        password.classList.remove('border-red');
-        confirmation.classList.remove('border-red');
-    } else {
-        match.add('hide');
-        notMatch.remove('hide');
-        password.classList.remove('border-green');
-        confirmation.classList.remove('border-green');
-        password.classList.add('border-red');
-        confirmation.classList.add('border-red');
-    }
+  if (confirmation == "") {
+    match.add('hide');
+    notMatch.add('hide');
+  } else if (password == confirmation) {
+    match.remove('hide');
+    notMatch.add('hide');
+  } else {
+    match.add('hide');
+    notMatch.remove('hide');
+  }
 }
