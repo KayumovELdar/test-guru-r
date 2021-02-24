@@ -1,9 +1,13 @@
 <h1>Тесты</h1>
 <p><%= link_to 'Создать тест', new_admin_test_path %></p>
 
-<table>
+<table id = "table" class = "table">
   <tr>
-    <th>Название теста</th>
+    <th id = "sort-by-title" class = 'pointer'>
+      Название теста
+      <%= octicon 'arrow-up', class: "text-success" %>
+      <%= octicon 'arrow-down', class: "text-success hide" %>
+    </th>
     <th>Категория</th>
     <th>Уровень</th>
     <th>Кол-во вопросов</th>
