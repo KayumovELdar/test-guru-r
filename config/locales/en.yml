@@ -39,6 +39,9 @@ en:
         question: "Question"
         url: "Gist url"
         email: "User email"
+    tests:
+      form_inline:
+        submit: 'OK'
 
   shared:
     errors:

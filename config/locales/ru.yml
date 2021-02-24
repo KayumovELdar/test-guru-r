@@ -6,6 +6,10 @@ ru:
         question: "Вопрос"
         url: "Url гиста"
         email: "Почта"
+    tests:
+      form_inline:
+        submit: 'OK'
+        
   shared:
     errors:
       header:
