@@ -42,6 +42,7 @@ en:
     tests:
       form_inline:
         submit: 'OK'
+        cancel: 'cancel'
 
   shared:
     errors:

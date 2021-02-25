@@ -1,2 +1,5 @@
 <h1>Редактировать <%= @test.name %> тест</h1>
+<%= render 'shared/errors', resource:@test%>
 <%= render 'form' %>
+<br>
+<%= link_to 'назад', admin_tests_path  %>

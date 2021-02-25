@@ -1,6 +1,6 @@
 <tr>
   <td class="align-middle">
-    <span class="test-title" data-test-id="<%=test.id%>">
+    <span class="test-name" data-test-id="<%=test.id%>">
       <%= link_to "#{test.name} (edit)",
                        edit_admin_test_path(test),
                        data:{test_id:test.id},
@@ -12,12 +12,8 @@
   <td class="align-middle"><%= test.level %></td>
   <td class="align-middle"><%= test.questions.count%></td>
   <td class="align-middle">
-  <td><%= link_to "добавить", admin_test_path(test) %></td>
-  <td>      <%= link_to "(edit)",
-                         edit_admin_test_path(test),
-                         data:{test_id:test.id},
-                         class: 'form-inline-link'  %></td>
-  <td><%= link_to 'Удалить', admin_test_path(test),
+  <td ><%= link_to "добавить", admin_test_path(test) %></td>
+  <td ><%= link_to 'Удалить', admin_test_path(test),
                   method: :delete,
                   data: {confirm: "Удалить тест #{test.name}?"} %>
   </td>

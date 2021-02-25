@@ -1,5 +1,8 @@
 <h1>Прохождение <%= @test_passage.test.name %> теста</h1>
 
+
+<div class='progress-bar'>
+</div>
 <b>
   <%= @test_passage.current_question.text %>
 </b>
@@ -8,6 +11,12 @@
   <b>
     Вопрос <%= @test_passage.current_question_position %> из
     <%= @test_passage.total_test_questions %>
+    <p
+      <%= content_tag :span,
+                      "#{@test_passage.test_progress_parseInt*100} %",
+                      class: 'question-number',
+                      data:{test_progress: @test_passage.test_progress_parseInt} %>
+    <p>
   </b>
 </p>
 
