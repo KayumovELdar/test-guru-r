@@ -22,7 +22,7 @@ class TestPassage < ApplicationRecord
   end
 
   def test_progress_parseInt
-    (current_question_position.to_f/total_test_questions).round(2)
+    (current_question_position.to_f/total_test_questions*100).round(2)
   end
 
 

@@ -12,10 +12,13 @@
 
 div.progress-bar{
   background-color: black;
+  border-radius: 15px;
+  padding: 5px;
     height: 20px;
   width: px;
   .progress{
     background-color: orange;
     height: 16px;
+    border-radius: 8px;
   }
 }

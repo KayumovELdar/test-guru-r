@@ -13,7 +13,7 @@
     <%= @test_passage.total_test_questions %>
     <p
       <%= content_tag :span,
-                      "#{@test_passage.test_progress_parseInt*100} %",
+                      "#{@test_passage.test_progress_parseInt} %",
                       class: 'question-number',
                       data:{test_progress: @test_passage.test_progress_parseInt} %>
     <p>
