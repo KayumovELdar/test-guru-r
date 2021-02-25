@@ -7,7 +7,7 @@ document.addEventListener('turbolinks:load',function(){
     let passdiv=document.createElement('div');
     passdiv.className= 'progress';
     progress_width=parseInt(getComputedStyle(progressBar).width)*testProgress
-    passdiv.style.width=progress_width+'px'
+    passdiv.style.width=progress_width +'px'-getComputedStyle(progressBar).padding*2
     progressBar.append(passdiv)
   }
 })
