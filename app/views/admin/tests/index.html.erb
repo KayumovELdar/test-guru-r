@@ -1,17 +1,19 @@
 <h1>Тесты</h1>
 <p><%= link_to 'Создать тест', new_admin_test_path %></p>
 
+  <%= render 'shared/errors', resource: @test %>
+
 <table id = "table" class = "table">
   <tr>
     <th id = "sort-by-title" class = 'pointer'>
       Название теста
       <%= octicon 'arrow-up', class: "text-success" %>
       <%= octicon 'arrow-down', class: "text-success hide" %>
-    </th>
+    </th >
     <th>Категория</th>
     <th>Уровень</th>
     <th>Кол-во вопросов</th>
-    <th colspan="5">Действия</th>
+    <th colspan="2" class="align-middle" >Действия</th>
   </tr>
   <%= render @tests %>
 </table>

@@ -1,10 +1,19 @@
 <tr>
-  <td><%= link_to test.name, admin_test_path(test) %></td>
-  <td><%= test.category.name %></td>
-  <td><%= test.level %></td>
-  <td><%= test.questions.count %></td>
-  <td><%= link_to 'Изменить', edit_admin_test_path(test) %></td>
-  <td><%= link_to 'Удалить', admin_test_path(test),
+  <td class="align-middle">
+    <span class="test-name" data-test-id="<%=test.id%>">
+      <%= link_to "#{test.name} (edit)",
+                       edit_admin_test_path(test),
+                       data:{test_id:test.id},
+                       class: 'form-inline-link'  %>
+    </span>
+    <%= render 'form_inline', test: test == @test ? @test : test %>
+  </td>
+  <td class="align-middle"><%= test.category.name %></td>
+  <td class="align-middle"><%= test.level %></td>
+  <td class="align-middle"><%= test.questions.count%></td>
+  <td class="align-middle">
+  <td ><%= link_to "добавить", admin_test_path(test) %></td>
+  <td ><%= link_to 'Удалить', admin_test_path(test),
                   method: :delete,
                   data: {confirm: "Удалить тест #{test.name}?"} %>
   </td>

@@ -21,6 +21,11 @@ class TestPassage < ApplicationRecord
     test.questions.count
   end
 
+  def test_progress_parseInt
+    (current_question_position.to_f/total_test_questions*100).round(2)
+  end
+
+
   def current_question_position
     self.test.questions.index(current_question) + 1
   end
