@@ -6,8 +6,8 @@ document.addEventListener('turbolinks:load',function(){
     let testProgress= question.dataset.testProgress
     let passdiv=document.createElement('div');
     passdiv.className= 'progress';
-    progress_width=parseInt(getComputedStyle(progressBar).width)*testProgress
-    passdiv.style.width=progress_width +'px'-getComputedStyle(progressBar).padding*2
+    progress_width=parseInt(getComputedStyle(progressBar).width)*testProgress-10
+    passdiv.style.width=progress_width +'px'
     progressBar.append(passdiv)
   }
 })
