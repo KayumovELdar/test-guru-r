@@ -8,7 +8,7 @@ document.addEventListener('turbolinks:load', function(){
     controls[i].addEventListener('click', formInlineLinkHandler)
   }
 
-  const errors = document.getElementById('.resource-errors')
+  const errors = document.getElementById('resource-errors')
 
   if(errors){
     let resourceId = errors.dataset.resourceId
