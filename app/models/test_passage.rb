@@ -12,6 +12,10 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def timer_test_run
+    test.timer_test-=1
+  end
+
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
