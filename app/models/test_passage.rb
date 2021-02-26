@@ -9,11 +9,15 @@ class TestPassage < ApplicationRecord
   before_update :before_update_set_next_question
 
   def complited?
-    current_question.nil?
+    current_question.nil? || time_out?
   end
 
-  def timer_test_run
-    test.timer_test-=1
+  def time_out?
+    (created_at + test.timer - Time.now).to_i <= 0
+  end
+
+  def passed_time(test_passage)
+    time = (test_passage.created_at + test_passage.test.timer_test - Time.now).to_i
   end
 
   def accept!(answer_ids)
