@@ -7,7 +7,7 @@ class Test < ApplicationRecord
   has_many :users, through: :test_passages
 
   validates :name, :level, presence: true
-  validates :level, :timer_test numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :level, :timer, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :name, uniqueness: { scope: :level, message: 'Тест с таким уровнем и именем уже существует' }
 
   scope :easy, -> { where(level: [0..1]) }

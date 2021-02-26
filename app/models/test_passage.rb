@@ -17,7 +17,7 @@ class TestPassage < ApplicationRecord
   end
 
   def passed_time(test_passage)
-    time = (test_passage.created_at + test_passage.test.timer_test - Time.now).to_i
+    time = (test_passage.created_at + test_passage.test.timer - Time.now).to_i
   end
 
   def accept!(answer_ids)
