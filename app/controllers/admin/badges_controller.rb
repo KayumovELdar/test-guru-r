@@ -1,5 +1,5 @@
-class BadgesController < ApplicationController
-  class Admin::BadgesController < Admin::BaseController
+
+class Admin::BadgesController < Admin::BaseController
 
   before_action :set_badge, only: %i[show edit update destroy]
 
@@ -44,7 +44,7 @@ class BadgesController < ApplicationController
   end
 
   def badge_params
-    params.require(:badge).permit(:name, :image_url)
+    params.require(:badge).permit(:name, :image_url, :rule_type)
   end
 end
 end
