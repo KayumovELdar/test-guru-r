@@ -22,4 +22,8 @@ class User < ApplicationRecord
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
+
+  def has_failed_passing?(test)
+   TestPassage.where(user_id: self.id, test_id: test.id, successed: false).length > 0
+  end
 end
