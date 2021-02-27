@@ -1,0 +1,16 @@
+<div>
+    <h2>Ваши badge </h2>
+    <%= render 'shared/errors', resource: @test %>
+    <table>
+      <thead>
+        <th>Название  </th>
+        <th>URL  </th>
+        <th>Условие  </th>
+        <th>Действие  </th>
+      </thead>
+      <tbody class="table-hover">
+        <%= render @badges %>
+      </tbody>
+    </table>
+    <%= link_to "Создать", new_admin_badge_path %>
+  </div>
