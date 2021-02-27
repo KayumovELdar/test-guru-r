@@ -1,4 +1,32 @@
 <%= form_with model: [:admin, @badge], local: true do |form| %>
   <%= render 'shared/errors', resource: @badge %>
 
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :image_url %><br>
+    <%= form.text_field :image_url %>
+  </p>
+  <p>
+    <%= form.label :rule_type %><br>
+    <%= form.select :rule_type, Badge.rule_types.keys.map { |w| [w.humanize, w] } %>
+  </p>
+  <p>
+    <%= form.label :test %><br>
+    <%= form.select :test, Test.pluck(:name).sort %>
+  </p>
+  <p>
+    <%= form.label :category %><br>
+    <%= form.select :category, Category.distinct.pluck(:name).sort %>
+  </p>
+  <p>
+    <%= form.label :level %><br>
+    <%= form.select :level, Test.distinct.pluck(:level).sort %>
+  </p>
+
+  <p><%= form.submit %></p>
+
 <% end %>
