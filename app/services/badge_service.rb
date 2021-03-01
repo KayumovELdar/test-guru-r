@@ -11,6 +11,8 @@ class BadgeService
     Badge.select do |badge| send("#{badge.rule_type}", @badge = badge)}
   end
 
+  private
+
   def first_try
     if @test.id.in?(Badge.on_the_first_try.pluck(:rule_value).map(&:to_i))
       if !@user.has_failed_passing?(@test) && !@user.badges.include?(@badge)

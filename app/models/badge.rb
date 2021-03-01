@@ -8,6 +8,8 @@ class Badge < ApplicationRecord
   validates :rule_type, presence: true, inclusion: { in: rule_types.keys }
   validate :valid_rule_value
 
+  private
+
   def valid_rule_value
     case rule_type
     when "first_try"

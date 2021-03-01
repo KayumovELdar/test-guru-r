@@ -10,6 +10,28 @@ ru:
       form_inline:
         submit: 'OK'
         cancel: 'cancel'
+    badges:
+      new:
+        header: "Новый бейдж"
+        back_to_badges: "Назад к бейджам"
+      edit:
+        header: "обновить бейдж"
+        back_to_badges: "Назад к бейджам"
+      index:
+        header: "Список бейджев"
+        name: "Название"
+        image: "Изображение"
+        rule: "Правило"
+        actions: "Действия"
+        create_badge: "Создать бейдж"
+      badge:
+        delete: "Удалить"
+        confirmation: "Вы уверены?"
+
+      create:
+        success: "Бейдж был успешно создан!"
+      destroy:
+        success: "Бейдж был успешно удалён!"
 
   shared:
     errors:
@@ -32,3 +54,14 @@ ru:
   services:
     gist_question_service:
       desc: "Вопрос из теста %{test_name} (TestGuru)"
+  helpers:
+    badges_helper:
+      first_try: "Прохождение теста %{rule_value} с первого раза "
+      category: "Категория %{rule_value} закрыта "
+      level: "Все теста сложности %{rule_value} пройдены "
+  badges:
+    index:
+      header: "Список бейджев"
+      title: "Название"
+      image: "Изображение"
+      rule: "Правило"

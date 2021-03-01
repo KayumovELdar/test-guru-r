@@ -9,8 +9,8 @@
     <%= show_rule(badge) %>
   </td>
   <td class="text-center align-middle">
-    <%= link_to "удалить", admin_badge_path(badge),
+    <%= link_to t('.delete'), admin_badges_path(badge),
                               method: :delete,
-                              data: { confirm: "уверен"} %>
+                              data: { confirm: t('.confirmation')} %>
   </td>
 </tr>
