@@ -9,7 +9,15 @@ class TestPassage < ApplicationRecord
   before_update :before_update_set_next_question
 
   def complited?
-    current_question.nil?
+    current_question.nil? || time_out?
+  end
+
+  def time_out?
+    (created_at + test.timer - Time.now).to_i <= 0
+  end
+
+  def passed_time(test_passage)
+    time = (test_passage.created_at + test_passage.test.timer - Time.now).to_i
   end
 
   def accept!(answer_ids)
@@ -22,9 +30,8 @@ class TestPassage < ApplicationRecord
   end
 
   def test_progress_parseInt
-    (current_question_position.to_f/total_test_questions*100).round(2)
+    (current_question_position.to_f / total_test_questions * 100).round(2)
   end
-
 
   def current_question_position
     self.test.questions.index(current_question) + 1

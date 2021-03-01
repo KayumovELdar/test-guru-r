@@ -1,5 +1,4 @@
 class Admin::TestsController < Admin::BaseController
-
   before_action :set_test, only: %i[show edit update destroy update_inline]
   before_action :set_tests, only: %i[index update_inline]
 
@@ -49,7 +48,7 @@ class Admin::TestsController < Admin::BaseController
   private
 
   def set_tests
-      @tests = Test.all
+    @tests = Test.all
   end
 
   def set_test
@@ -57,7 +56,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:name, :level, :category_id)
+    params.require(:test).permit(:name, :level, :category_id, :timer_test)
   end
 
   def rescue_with_test_not_found

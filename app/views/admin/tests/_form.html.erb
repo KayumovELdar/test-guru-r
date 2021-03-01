@@ -12,6 +12,11 @@
   </p>
 
   <p>
+    <%= form.label :timer %>
+    <%= form.text_field :timer  %>
+  </p>
+
+  <p>
     <%= form.label :category_id %>
     <%= form.collection_select :category_id, Category.all, :id, :name, prompt: true %>
   </p>

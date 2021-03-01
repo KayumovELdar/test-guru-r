@@ -3,6 +3,12 @@
 
 <div class='progress-bar'>
 </div>
+<p>
+  <%= content_tag :div,
+                "Оставшееся время: #{ @test_passage.passed_time(@test_passage) }",
+                id: 'timer',
+                data: { timer: @test_passage.passed_time(@test_passage)}  %>
+</p>
 <b>
   <%= @test_passage.current_question.text %>
 </b>
