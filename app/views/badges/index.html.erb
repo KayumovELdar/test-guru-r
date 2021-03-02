@@ -1,15 +1,27 @@
-<h5>Полученные награды</h5>
+<h5><%= t('.header_1')%></h5>
+<table class = "table">
+  <thead>
+    <th class="align-middle"><%= t('.name') %></th>
+    <th class="align-middle"><%= t('.image') %></th>
+  </thead>
+  <tbody class="table-hover">
+   <%= render @earned_badges%>
+  </tbody>
+</table>
 
-<ul>
-  <%= render @earned_badges%>
-</ul>
 <br />
 
-<h5>Осталось собрать</h5>
+<h5><%= t('.header_2')%></h5>
 
-<ul>
-  <%= render @other_badges %>
-</ul>
+<table class = "table">
+  <thead>
+    <th class="align-middle"><%= t('.name') %></th>
+    <th class="align-middle"><%= t('.image') %></th>
+  </thead>
+  <tbody class="table-hover">
+   <%= render @other_badges %>
+  </tbody>
+</table>
 
 <p>
   <%= link_to "Назад", tests_path %>
