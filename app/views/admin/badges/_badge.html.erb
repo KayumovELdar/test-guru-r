@@ -3,13 +3,16 @@
     <%= badge.name %>
   </td>
   <td class="text-center align-middle">
-    <%= badge.image_url %>
+    <%= badge.image %>
   </td>
   <td class="text-center align-middle">
-    <%= show_rule(badge) %>
+    <%= badge.rule %>
   </td>
   <td class="text-center align-middle">
-    <%= link_to t('.delete'), admin_badges_path(badge),
+    <%= badge.option %>
+  </td>
+  <td class="text-center align-middle">
+    <%= link_to t('.delete'), admin_badge_path(badge),
                               method: :delete,
                               data: { confirm: t('.confirmation')} %>
   </td>

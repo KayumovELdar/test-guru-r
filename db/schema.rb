@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_27_165147) do
+ActiveRecord::Schema.define(version: 2021_03_02_153345) do
 
   create_table "answers", force: :cascade do |t|
     t.string "text", null: false
@@ -23,10 +23,11 @@ ActiveRecord::Schema.define(version: 2021_02_27_165147) do
 
   create_table "badges", force: :cascade do |t|
     t.string "name", null: false
-    t.string "image_url", null: false
+    t.string "image", null: false
+    t.string "rule", null: false
+    t.string "option", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "rule_value"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -60,7 +61,7 @@ ActiveRecord::Schema.define(version: 2021_02_27_165147) do
     t.integer "correct_questions", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "successed", default: false
+    t.integer "total_score"
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"

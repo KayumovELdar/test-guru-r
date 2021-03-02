@@ -10,11 +10,9 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.complited?
-      if @test_passage.successed?
-        @test_passage.successed = true
-        @test_passage.save
+      if new_badges?
+        @test_passage.user.badges << new_badges
       end
-      BadgeService.new(@test_passage).call
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
@@ -26,5 +24,13 @@ class TestPassagesController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def new_badges?
+    new_badges.length >= 1
+  end
+
+  def new_badges
+    @new_bages ||= BadgeService.new(@test_passage).new_earned_badges
   end
 end

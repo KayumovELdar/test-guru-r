@@ -1,15 +1,16 @@
-<div>
-    <h2><%= t('.header') %> </h2>
-    <%= render 'shared/errors', resource: @test %>
-    <table>
-      <thead>
-        <th><%= t('.name') %></th>
-        <th><%= t('.image') %></th>
-        <th><%= t('.rule') %></th>
-        <th><%= t('.actions') %> </th>
-      </thead>
-      <tbody class="table-hover">
-        <%= render @badges %>
-      </tbody>
-    </table>
-  </div>
+<h5>Полученные награды</h5>
+
+<ul>
+  <%= render @earned_badges%>
+</ul>
+<br />
+
+<h5>Осталось собрать</h5>
+
+<ul>
+  <%= render @other_badges %>
+</ul>
+
+<p>
+  <%= link_to "Назад", tests_path %>
+</p>

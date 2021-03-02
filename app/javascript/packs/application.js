@@ -12,7 +12,6 @@ import "utilities/confirm_password.js"
 import "utilities/form_inline.js"
 import "utilities/progress_bar.js"
 import "utilities/timer_test.js"
-import "utilities/badge_rule_value.js"
 
 Rails.start()
 Turbolinks.start()
