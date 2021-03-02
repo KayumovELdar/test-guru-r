@@ -22,7 +22,8 @@ ru:
         name: "Название"
         image: "Изображение"
         rule: "Правило"
-        actions: "Действия"
+        point: "Параметр"
+        actions: "Действие"
         create_badge: "Создать бейдж"
       badge:
         delete: "Удалить"

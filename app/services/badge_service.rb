@@ -7,6 +7,7 @@ class BadgeService
     @current_test_passages = @user.test_passages.where(test: @test)
     @badges = Badge.where.not(id: @user.badges.ids)
   end
+
   def new_earned_badges
     @badges.select do |badge|
       send("#{badge.rule}?",badge.option)
@@ -14,8 +15,8 @@ class BadgeService
   end
 
   private
-  
-  def first_time?(_params)
+
+  def first_try?(_params)
     @current_test_passages.count == 1 if @test_passage.success?
   end
 

@@ -1,12 +1,13 @@
 <div>
     <h2><%= t('.header') %> </h2>
     <%= render 'shared/errors', resource: @test %>
-    <table>
+    <table class = "table">
       <thead>
-        <th><%= t('.name') %></th>
-        <th><%= t('.image') %></th>
-        <th><%= t('.rule') %></th>
-        <th><%= t('.actions') %> </th>
+        <th class="align-middle"><%= t('.name') %></th>
+        <th class="align-middle"><%= t('.image') %></th>
+        <th class="align-middle"><%= t('.rule') %></th>
+        <th class="align-middle"><%= t('.point') %> </th>
+        <th class="align-middle"><%= t('.actions') %> </th>
       </thead>
       <tbody class="table-hover">
         <%= render @badges %>
