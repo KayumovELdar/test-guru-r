@@ -1,5 +1,5 @@
 document.addEventListener('turbolinks:load', function() {
-  var ruleTypeSelector = document.querySelector('#badge_rule_type')
+  const ruleTypeSelector = document.querySelector('#badge_rule_type')
 
   if (ruleTypeSelector) {
     ruleTypeSelector.addEventListener('change', ruleValueSelectorChange)
@@ -7,15 +7,15 @@ document.addEventListener('turbolinks:load', function() {
 })
 
 function ruleValueSelectorChange() {
-  var ruleTypeSelectorValue = document.querySelector('#badge_rule_type').value
+  const ruleTypeSelectorValue = document.querySelector('#badge_rule_type').value
 
-  var ruleValueTestSelector = document.querySelector('.test-rule-value')
-  var ruleValueCategorySelector = document.querySelector('.category-rule-value')
-  var ruleValueTLevelSelector = document.querySelector('.level-rule-value')
+  let ruleValueTestSelector = document.querySelector('.test-rule-value')
+  let ruleValueCategorySelector = document.querySelector('.category-rule-value')
+  let ruleValueTLevelSelector = document.querySelector('.level-rule-value')
 
-  var ruleValueTestParagraph = document.querySelector('#test-rule-value')
-  var ruleValueCategoryParagraph = document.querySelector('#category-rule-value')
-  var ruleValueTLevelParagraph = document.querySelector('#level-rule-value')
+  let ruleValueTestParagraph = document.querySelector('#test-rule-value')
+  let ruleValueCategoryParagraph = document.querySelector('#category-rule-value')
+  let ruleValueTLevelParagraph = document.querySelector('#level-rule-value')
 
   if (ruleTypeSelectorValue == "first_try") {
     console.log("first_try!")
