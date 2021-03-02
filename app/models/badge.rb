@@ -6,5 +6,4 @@ class Badge < ApplicationRecord
   has_many :users, through: :user_badges
 
   validates :name, :image, presence: true
-  validates :rule, inclusion: { in: RULES }
 end

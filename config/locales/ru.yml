@@ -26,6 +26,8 @@ ru:
         actions: "Действие"
         create_badge: "Создать бейдж"
       badge:
+        show: "Просмотреть"
+        edit: "Обновить"
         delete: "Удалить"
         confirmation: "Вы уверены?"
 
