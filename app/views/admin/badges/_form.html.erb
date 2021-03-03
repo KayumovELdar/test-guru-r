@@ -1,0 +1,24 @@
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+
+  <p class="mb-1">
+    <%= form.label :name, "название" %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p class="mb-1">
+    <%= form.label :image, "URL" %><br>
+    <%= form.text_field :image %>
+  </p>
+  <p class="mb-1">
+    <%= form.label :rule, "Условие получения" %><br>
+    <%= form.select :rule, Badge::RULES %>
+  </p>
+  <p>
+    <%= form.label :option %>
+    <%= form.text_field :option %>
+  </p>
+
+  <p><%= form.submit %></p>
+
+<% end %>

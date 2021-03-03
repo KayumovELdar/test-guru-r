@@ -7,6 +7,7 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_set_next_question
+  scope :success, -> { where('total_score >= ?', TEST_LIMIT) }
 
   def complited?
     current_question.nil? || time_out?
@@ -22,6 +23,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.total_score = result_test
     save!
   end
 

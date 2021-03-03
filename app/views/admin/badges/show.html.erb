@@ -1,0 +1,11 @@
+<h2><%= @badge.name %></h2>
+
+<p>
+  image: <%= @badge.image %><br>
+  rule: <%= @badge.rule%><br>
+  options: <%=@badge.option%>
+</p>
+
+<%= link_to 'Обновить', edit_admin_badge_path(@badge) %> |
+<%= link_to 'Назад', admin_badges_path() %> |
+<%= link_to "Удалить", admin_answer_path(@badge), method: :delete %><br> 

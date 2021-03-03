@@ -21,6 +21,6 @@
     <%= form.collection_select :category_id, Category.all, :id, :name, prompt: true %>
   </p>
 
-  <p><%= form.submit %></p>
+  <p><%= form.submit, class: 'btn btn-primary'%></p>
 
 <% end %>

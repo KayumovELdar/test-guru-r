@@ -32,3 +32,7 @@ answers = Answer.create!([
                            { text: 'ДА!', correct: true, question: questions[2] },
                            { text: 'НЕТ!', correct: false, question: questions[2] }
                          ])
+badges = Badge.create!([
+  {name: 'man1', image: '1.jpg', rule: 'level', option: '1'},
+  {name: 'man2', image: '2.jpg', rule: 'category', option: '2'}
+  ])

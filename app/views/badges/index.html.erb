@@ -1,0 +1,28 @@
+<h5><%= t('.header_1')%></h5>
+<table class = "table">
+  <thead>
+    <th class="align-middle"><%= t('.name') %></th>
+    <th class="align-middle"><%= t('.image') %></th>
+  </thead>
+  <tbody class="table-hover">
+   <%= render @earned_badges%>
+  </tbody>
+</table>
+
+<br />
+
+<h5><%= t('.header_2')%></h5>
+
+<table class = "table">
+  <thead>
+    <th class="align-middle"><%= t('.name') %></th>
+    <th class="align-middle"><%= t('.image') %></th>
+  </thead>
+  <tbody class="table-hover">
+   <%= render @other_badges %>
+  </tbody>
+</table>
+
+<p>
+  <%= link_to "Назад", tests_path %>
+</p>
